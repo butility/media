@@ -1,0 +1,21 @@
+node_modules/
+.npmignore
+.env
+.vscode/
+.dist/
+
+# builds
+media.js
+media.d.ts
+file.js
+file.d.ts
+camera.js
+camera.d.ts
+full-screen.js
+full-screen.d.ts
+image.js
+image.d.ts
+audiovisual.js
+audiovisual.d.ts
+blob.js
+blob.d.ts
