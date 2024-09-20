@@ -12,9 +12,15 @@ Welcome to the Media package of Butility! This library provides a comprehensive 
 
 ## Modules
 
-- **Camera**: Capture and record media using device cameras.
-- **File**: Handle file uploads, downloads, and validations.
-- **Image**: Process and manipulate image files.
-- **Audiovisual**: Control playback and manage audiovisual features.
-- **Blob**: Perform operations on binary large objects.
-- **FullScreen**: Manage full-screen capabilities in your application.
+- **[Camera](./modules/camera.md)**: Capture and record media using device cameras.
+- **[File](./modules/file.md)**: Handle file uploads, downloads, and validations.
+- **[Image](./modules/image.md)**: Process and manipulate image files.
+- **[Audiovisual](./modules/audiovisual.md)**: Control playback and manage audiovisual features.
+- **[Blob](./modules/blob.md)**: Perform operations on binary large objects.
+- **[FullScreen](./modules/full-screen.md)**: Manage full-screen capabilities in your application.
+
+## References
+- [Modules](./modules/README.md);
+- [Installation](./installation.md)
+- [Usage](./usage.md)
+- [Changelog](./changelog.md)
