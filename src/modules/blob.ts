@@ -10,7 +10,7 @@ import {
     mergeBlobs,
     readBlobAsText,
     textToBlob,
-    verifyBlob
+    verifyBlob,
 } from '@/core/blob';
 
 const Blob = {
@@ -24,7 +24,7 @@ const Blob = {
     mergeBlobs,
     readBlobAsText,
     textToBlob,
-    verifyBlob
-}
+    verifyBlob,
+};
 
 export default Blob;

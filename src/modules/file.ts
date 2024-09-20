@@ -6,9 +6,9 @@ import {
     uploadFile,
     validateFileSize,
     validateFileType,
-    zip
+    zip,
 } from '@/core/file';
-  
+
 const File = {
     decompressDEFLATE,
     downloadFile,
@@ -16,7 +16,7 @@ const File = {
     uploadFile,
     validateFileSize,
     validateFileType,
-    zip
-}
-  
+    zip,
+};
+
 export default File;

@@ -7,9 +7,9 @@ import {
     flipImage,
     preloadImagesWithCallback,
     resizeImage,
-    rotateImage
+    rotateImage,
 } from '@/core/image';
-  
+
 const Image = {
     calculateAspectRatio,
     compressImage,
@@ -18,7 +18,7 @@ const Image = {
     flipImage,
     preloadImagesWithCallback,
     resizeImage,
-    rotateImage
-}
-  
+    rotateImage,
+};
+
 export default Image;

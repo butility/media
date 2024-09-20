@@ -3,14 +3,14 @@ import {
     detectFullscreenSupport,
     enterFullscreen,
     exitFullscreen,
-    getFullscreenElement
+    getFullscreenElement,
 } from '@/core/full-screen';
-  
+
 const FullScreen = {
     detectFullscreenSupport,
     enterFullscreen,
     exitFullscreen,
-    getFullscreenElement
-}
-  
+    getFullscreenElement,
+};
+
 export default FullScreen;

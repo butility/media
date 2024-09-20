@@ -9,8 +9,7 @@ import {
     skipWithDir,
     toggleCaptions,
     updateVideoSourceAndResolution,
-    videoTones
-
+    videoTones,
 } from '@/core/audiovisual';
 
 const Audiovisual = {
@@ -23,7 +22,7 @@ const Audiovisual = {
     skipWithDir,
     toggleCaptions,
     updateVideoSourceAndResolution,
-    videoTones
-}
+    videoTones,
+};
 
 export default Audiovisual;

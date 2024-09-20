@@ -1,6 +1,10 @@
 import type { Coordinates, Axis } from '@/types/media';
 
-export function resizeImage(file: File, maxWidth: number, maxHeight: number): Promise<Blob | null> {
+export function resizeImage(
+    file: File,
+    maxWidth: number,
+    maxHeight: number,
+): Promise<Blob | null> {
     return new Promise((resolve, reject) => {
         const img = new Image();
 
@@ -88,7 +92,10 @@ export function compressImage(file: File, quality: any): Promise<Blob | null> {
     });
 }
 
-export function cropImage(file: File, coordinates: Coordinates): Promise<Blob | null> {
+export function cropImage(
+    file: File,
+    coordinates: Coordinates,
+): Promise<Blob | null> {
     return new Promise((resolve, reject) => {
         const img = new Image();
 

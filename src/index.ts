@@ -15,8 +15,8 @@ import Audiovisual, {
     skipWithDir,
     toggleCaptions,
     updateVideoSourceAndResolution,
-    videoTones
-} from "@/modules/audiovisual";
+    videoTones,
+} from '@/modules/audiovisual';
 
 import Blob, {
     blobToHex,
@@ -29,13 +29,13 @@ import Blob, {
     mergeBlobs,
     readBlobAsText,
     textToBlob,
-    verifyBlob
+    verifyBlob,
 } from '@/modules/blob';
 
 import Camera, {
     capturePhoto,
     openCamera,
-    recordVideo
+    recordVideo,
 } from '@/modules/camera';
 
 import File, {
@@ -45,14 +45,14 @@ import File, {
     uploadFile,
     validateFileSize,
     validateFileType,
-    zip
+    zip,
 } from '@/modules/file';
 
 import FullScreen, {
     detectFullscreenSupport,
     enterFullscreen,
     exitFullscreen,
-    getFullscreenElement
+    getFullscreenElement,
 } from '@/modules/full-screen';
 
 import Image, {
@@ -63,7 +63,7 @@ import Image, {
     flipImage,
     preloadImagesWithCallback,
     resizeImage,
-    rotateImage
+    rotateImage,
 } from '@/modules/image';
 
 const Media = {
@@ -109,15 +109,8 @@ const Media = {
     validateFileType,
     verifyBlob,
     videoTones,
-    zip
+    zip,
 };
 
 export default Media;
-export {
-    Audiovisual,
-    Blob,
-    Camera,
-    File,
-    FullScreen,
-    Image
-}
+export { Audiovisual, Blob, Camera, File, FullScreen, Image };

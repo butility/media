@@ -49,11 +49,18 @@ export function uploadFile(file: File, url: string): Promise<any> {
     });
 }
 
-export async function downloadFile(fileUrl: string, fileName: string, fileType?: string): Promise<any> {
+export async function downloadFile(
+    fileUrl: string,
+    fileName: string,
+    fileType?: string,
+): Promise<any> {
     return new Promise((resolve, reject) => {
         Request.get(fileUrl, (response: any) => {
             if (response) {
-                const blob = new Blob([response], fileType ? { type: fileType } : {});
+                const blob = new Blob(
+                    [response],
+                    fileType ? { type: fileType } : {},
+                );
                 downloadBlob(blob, fileName);
                 resolve(response);
             } else {
@@ -82,7 +89,7 @@ export async function unzip(zipBlob: Blob): Promise<File[]> {
                     if (signature !== 0x04034b50) {
                         throw new Error('Invalid ZIP file format.');
                     }
-                
+
                     const fileNameLength = view.getUint16(offset + 26, true);
                     const extraFieldLength = view.getUint16(offset + 28, true);
 

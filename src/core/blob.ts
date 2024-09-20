@@ -92,7 +92,10 @@ export async function encryptBlob(blob: Blob, key: CryptoKey): Promise<Blob> {
     return new Blob([iv, encryptedData], { type: blob.type });
 }
 
-export async function decryptBlob(encryptedBlob: Blob, key: CryptoKey): Promise<Blob> {
+export async function decryptBlob(
+    encryptedBlob: Blob,
+    key: CryptoKey,
+): Promise<Blob> {
     const arrayBuffer = await encryptedBlob.arrayBuffer();
     const iv = arrayBuffer.slice(0, 12); // Extract IV from the first 12 bytes
     const encryptedData = arrayBuffer.slice(12); // Rest is encrypted content
@@ -117,7 +120,10 @@ export function chunkBlob(blob: Blob, chunkSize: number): Blob[] {
     return chunks;
 }
 
-export async function readBlobAsText(blob: Blob, encoding = 'utf-8'): Promise<string | ArrayBuffer | null> {
+export async function readBlobAsText(
+    blob: Blob,
+    encoding = 'utf-8',
+): Promise<string | ArrayBuffer | null> {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = () => resolve(reader.result);
@@ -126,7 +132,10 @@ export async function readBlobAsText(blob: Blob, encoding = 'utf-8'): Promise<st
     });
 }
 
-export function verifyBlob(blob: Blob, options: VerifyBlobOptions = {}): boolean {
+export function verifyBlob(
+    blob: Blob,
+    options: VerifyBlobOptions = {},
+): boolean {
     if (options.maxSize && blob.size > options.maxSize) {
         return false;
     }
