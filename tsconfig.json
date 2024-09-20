@@ -12,7 +12,8 @@
       "*": ["node_modules/*"],
       "@/*": ["src/*"],
     },
-    "lib": ["dom", "es6"]
+    "lib": ["dom", "es6"],
+    "types": ["jest", "node"],
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
