@@ -90,7 +90,7 @@ preloadImagesWithCallback(imageUrls, (images) => {
 ```
 ## Documentation
 
-For `@butility/media` documentation refer to the [docs folder](https://github/butility/media/tree/main/docs).
+For `@butility/media` documentation refer to the [docs folder](https://github.com/butility/media/tree/main/docs).
 
 ## Changelog
 
