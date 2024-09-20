@@ -21,25 +21,25 @@ npm install @butility/media
 
 ```html
 <!-- To use all the functions and methods -->
-<script src="unpkg.com/@butility/media@latest/media.js" type="module"></script>
+<script src="https://unpkg.com/@butility/media@latest/media.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/media.js"></script>
 <!-- To use Image utils -->
-<script src="unpkg.com/@butility/media@latest/image.js" type="module"></script>
+<script src="https://unpkg.com/@butility/media@latest/image.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/image.js"></script>
 <!-- To use Camera utils -->
-<script src="unpkg.com/@butility/media@latest/camera.js" type="module"></script>
+<script src="https://unpkg.com/@butility/media@latest/camera.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/camera.js"></script>
 <!-- To use Audio and Video utils -->
-<script src="unpkg.com/@butility/media@latest/audiovisual.js" type="module"></script>
+<script src="https://unpkg.com/@butility/media@latest/audiovisual.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/audiovisual.js"></script>
 <!-- To use File utils -->
-<script src="unpkg.com/@butility/media@latest/file.js" type="module"></script>
+<script src="https://unpkg.com/@butility/media@latest/file.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/file.js"></script>
 <!-- To use Blob utils -->
-<script src="unpkg.com/@butility/media@latest/blob.js" type="module"></script>
+<script src="https://unpkg.com/@butility/media@latest/blob.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/blob.js"></script>
 <!-- To use Full screen utils -->
-<script src="unpkg.com/@butility/media@latest/full-screen.js" type="module"></script>
+<script src="https://unpkg.com/@butility/media@latest/full-screen.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/full-screen.js"></script>
 ```
 ## Examples
@@ -88,13 +88,13 @@ preloadImagesWithCallback(imageUrls, (images) => {
 });
 
 ```
-## Contributing
+## Documentation
 
-Contributions are welcome! Please follow the guidelines below:
+For `@butility/media` documentation refer to the [docs folder](https://github/butility/media/tree/main/docs).
 
-1. Fork the repository.
-2. Create a new branch for each significant change.
-3. Submit a pull request with a clear description of the changes.
+## Changelog
+
+You can find [changelog here](https://github.com/butility/media/tree/main/docs/changelog.md)
 
 ## License
 
