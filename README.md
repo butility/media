@@ -46,23 +46,21 @@ npm install @butility/media
 
 ### Working with the camera
 ```js
-import { recordVideo } from "@butility/media/camera"
-import { downloadBlob } from "@butility/media/blob"
-// or import { recordVideo, downloadBlob } from "@butility/media";
+import { capturePhoto } from "./path/to/@butility/camera.js";
+import { downloadBlob } from "./path/to/@butility/blob.js";
 
-try {
-    // Record the video
-    const videoBlob = await recordVideo({
-        fileType: "mp4",
-        duration: 5000,
-        targetElementId: "video-id"
+const options = {
+    targetElementId: 'video-id',
+    fileType: 'jpeg'
+};
+
+document.querySelector("#capture-btn").addEventListener("click", () => {
+    capturePhoto(options).then(photoBlob => {
+        downloadBlob(photoBlob, "photo.jpeg");
+    }).catch(error => {
+        console.error('Error capturing photo:', error);
     });
-
-    // Download the recorded video
-    downloadBlob(videoBlob, 'my-recorded-video.mp4');
-} catch (error) {
-    console.error('Error recording or downloading video:', error);
-}
+});
 ```
 ### Working with images
 ```js
