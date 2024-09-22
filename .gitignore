@@ -6,7 +6,7 @@ node_modules/
 
 # builds
 media.js
-media.d.ts
+/media.d.ts
 file.js
 file.d.ts
 camera.js
