@@ -1,5 +1,4 @@
-
-import type { PlaybackActions, VolumeActions } from "@/types/media";
+import type { PlaybackActions, VolumeActions } from '@/types/media';
 
 export function controlPlayback(
     videoElement: HTMLVideoElement | HTMLAudioElement,

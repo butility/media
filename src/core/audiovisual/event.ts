@@ -1,4 +1,3 @@
-
 import type { MediaEventCallback } from '@/types/media';
 
 export function registerVideoEvents(
@@ -63,4 +62,3 @@ export function registerVideoEvents(
         }
     });
 }
-

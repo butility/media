@@ -1,5 +1,4 @@
-
-import { canvas as Canvas} from '@butility/dom/html';
+import { canvas as Canvas } from '@butility/dom/html';
 import { setAttribute } from '@butility/dom/attribute';
 import type { Coordinates, Axis } from '@/types/media';
 
@@ -12,7 +11,7 @@ export function resizeImage(
         const img = new Image();
 
         img.onload = () => {
-            const canvas = Canvas()
+            const canvas = Canvas();
             // const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
@@ -55,13 +54,7 @@ export function rotateImage(file: File, degrees: number): Promise<Blob | null> {
             if (ctx) {
                 ctx.translate(canvas.width / 2, canvas.height / 2);
                 ctx.rotate(degrees * (Math.PI / 180));
-                ctx.drawImage(
-                    img,
-                    -width / 2,
-                    -height / 2,
-                    width,
-                    height,
-                );
+                ctx.drawImage(img, -width / 2, -height / 2, width, height);
             }
             canvas.toBlob((blob) => resolve(blob), file.type);
         };
@@ -81,7 +74,7 @@ export function compressImage(file: File, quality: any): Promise<Blob | null> {
 
             let width = img.width;
             let height = img.height;
-            setAttribute(canvas, { width: width, height: height })
+            setAttribute(canvas, { width: width, height: height });
 
             if (ctx) ctx.drawImage(img, 0, 0, width, height);
 
@@ -106,7 +99,7 @@ export function cropImage(
 
             setAttribute(canvas, {
                 width: coordinates.width,
-                height: coordinates.height
+                height: coordinates.height,
             });
 
             if (ctx)
@@ -137,7 +130,7 @@ export function flipImage(file: File, axis: Axis): Promise<Blob | null> {
 
             let width = img.width;
             let height = img.height;
-            
+
             setAttribute(canvas, { width: width, height: height });
 
             if (axis === 'horizontal' && ctx) {
@@ -206,7 +199,7 @@ export function preloadImagesWithCallback(
             console.error(`Failed to load image: ${url}`);
             imageLoaded();
         };
-        setAttribute(img, { src: url })
+        setAttribute(img, { src: url });
     });
 }
 

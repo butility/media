@@ -1,12 +1,29 @@
-
 // Shared
-export type VideoFileTypes = "mp4" | "webm" | "avi" | "mkv" | "mov" | "flv" | "wmv" | "m4v" | "ogg";
-export type AudioFileTypes = "mp3" | "wav" | "ogg" | "aac" | "flac" | "m4a" | "wma" | "alac" | "aiff";
+export type VideoFileTypes =
+    | 'mp4'
+    | 'webm'
+    | 'avi'
+    | 'mkv'
+    | 'mov'
+    | 'flv'
+    | 'wmv'
+    | 'm4v'
+    | 'ogg';
+export type AudioFileTypes =
+    | 'mp3'
+    | 'wav'
+    | 'ogg'
+    | 'aac'
+    | 'flac'
+    | 'm4a'
+    | 'wma'
+    | 'alac'
+    | 'aiff';
 
 // Blob
-export interface VerifyBlobOptions { 
-    maxSize?: number; 
-    allowedTypes?: string[] 
+export interface VerifyBlobOptions {
+    maxSize?: number;
+    allowedTypes?: string[];
 }
 
 // camera
@@ -15,16 +32,16 @@ export interface CameraOptions {
 }
 
 export interface PhotoCaptureOptions extends CameraOptions {
-    fileType: "jpeg" | "jpg" | "png" | "gif" | "bmp" | "tiff" | "svg+xml";
+    fileType: 'jpeg' | 'jpg' | 'png' | 'gif' | 'bmp' | 'tiff' | 'svg+xml';
 }
 
-export interface VideoRecordOptions extends CameraOptions { 
+export interface VideoRecordOptions extends CameraOptions {
     duration?: number;
     fileType: VideoFileTypes;
     start: (MediaRecorder: Function) => void;
     stop: (MediaRecorder: MediaRecorder) => void;
-    removeAudio?: boolean,
-    removeVideo?: boolean
+    removeAudio?: boolean;
+    removeVideo?: boolean;
 }
 
 // file
@@ -41,18 +58,18 @@ export interface CentralDirectory {
 }
 
 // Image
-export type Axis = "horizontal" | "vertical";
+export type Axis = 'horizontal' | 'vertical';
 
-export interface Coordinates { 
-    width: number; 
+export interface Coordinates {
+    width: number;
     height: number;
-    x: number; 
-    y: number; 
+    x: number;
+    y: number;
 }
 
 // Audiovisual
-export type PlaybackActions = "play" | "pause" | "toggle";
-export type Direction = "forward" | "backward";
+export type PlaybackActions = 'play' | 'pause' | 'toggle';
+export type Direction = 'forward' | 'backward';
 export type VolumeActions = 'setVolume' | 'mute' | 'unmute' | 'toggleMute';
 
 export interface MediaEventCallback {

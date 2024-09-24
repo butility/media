@@ -1,5 +1,3 @@
-
-
 export function toggleCaptions(
     videoElement: HTMLVideoElement | HTMLAudioElement,
 ): Promise<void> {

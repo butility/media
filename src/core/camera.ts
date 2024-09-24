@@ -143,7 +143,10 @@ export function recordVideo(
                         );
                         return;
                     }
-                    setAttribute(videoElement, { srcObject: mediaStream, muted: true });
+                    setAttribute(videoElement, {
+                        srcObject: mediaStream,
+                        muted: true,
+                    });
 
                     const mediaRecorder = new MediaRecorder(mediaStream, {
                         mimeType: `video/${fileType}`,
