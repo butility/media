@@ -1,16 +1,28 @@
-export * from '@/core/audiovisual';
+export * from '@/core/audiovisual/caption';
+export * from '@/core/audiovisual/seek';
+export * from '@/core/audiovisual/edit';
+export * from '@/core/audiovisual/event';
+export * from '@/core/audiovisual/controls';
 import {
+    getAvailableCaptionTracks,
+    setCaptionTrack,
+    toggleCaptions,
+} from '@/core/audiovisual/caption';
+import { 
     controlPlayback,
     controlVolume,
-    getAvailableCaptionTracks,
-    registerVideoEvents,
-    seekTo,
-    setCaptionTrack,
+} from "@/core/audiovisual/controls";
+import {
     skipWithDir,
-    toggleCaptions,
+    seekTo,
+} from "@/core/audiovisual/seek";
+import { 
+    registerVideoEvents, 
+} from "@/core/audiovisual/event"; 
+import {
     updateVideoSourceAndResolution,
     videoTones,
-} from '@/core/audiovisual';
+} from "@/core/audiovisual/edit";
 
 const Audiovisual = {
     controlPlayback,
