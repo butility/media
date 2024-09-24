@@ -1,5 +1,4 @@
-
-import type { Direction } from "@/types/media";
+import type { Direction } from '@/types/media';
 
 export function seekTo(
     videoElement: HTMLVideoElement | HTMLAudioElement,

@@ -1,4 +1,3 @@
-
 // for next version @butility/network is implemented
 export function get(url: string, callback: Function) {
     const xhr = new XMLHttpRequest();

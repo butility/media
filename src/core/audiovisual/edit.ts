@@ -1,7 +1,10 @@
-
-import { source } from "@butility/dom/html";
-import { setAttribute } from "@butility/dom/attribute";
-import type { MediaToneOptions, VideoFileTypes, AudioFileTypes } from "@/types/media";
+import { source } from '@butility/dom/html';
+import { setAttribute } from '@butility/dom/attribute';
+import type {
+    MediaToneOptions,
+    VideoFileTypes,
+    AudioFileTypes,
+} from '@/types/media';
 
 export function videoTones(
     videoElement: HTMLVideoElement | HTMLAudioElement,
@@ -89,7 +92,6 @@ export function videoTones(
     });
 }
 
-
 export function updateVideoSourceAndResolution(
     videoElement: HTMLVideoElement | HTMLAudioElement,
     sourceUrl: string,
@@ -156,7 +158,7 @@ export function updateVideoSourceAndResolution(
         }
 
         const sourceElement = source({ src: sourceUrl, type: type });
-        setAttribute(videoElement, { innerHTML: "" })
+        setAttribute(videoElement, { innerHTML: '' });
         videoElement.innerHTML = '';
         videoElement.appendChild(sourceElement);
         videoElement.load();
