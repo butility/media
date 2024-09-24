@@ -3,6 +3,8 @@ import type {
     PhotoCaptureOptions,
     VideoRecordOptions,
 } from '@/types/media';
+import { setAttribute } from '@butility/dom/attribute';
+import { canvas as Canvas } from '@butility/dom/html';
 
 export function openCamera(
     options: CameraOptions = {
@@ -22,7 +24,7 @@ export function openCamera(
         }
 
         navigator.mediaDevices
-            .getUserMedia({ video: true })
+            .getUserMedia({ video: true, audio: true })
             .then((stream) => {
                 videoElement.srcObject = stream;
                 resolve(stream);
@@ -55,14 +57,16 @@ export function capturePhoto(
         navigator.mediaDevices
             .getUserMedia({ video: true })
             .then((mediaStream) => {
-                videoElement.srcObject = mediaStream;
+                setAttribute(videoElement, { srcObject: mediaStream });
 
-                const canvas = document.createElement('canvas');
+                const canvas = Canvas();
                 const context = canvas.getContext('2d');
 
                 videoElement.addEventListener('loadedmetadata', () => {
-                    canvas.width = videoElement.videoWidth;
-                    canvas.height = videoElement.videoHeight;
+                    setAttribute(canvas, {
+                        width: videoElement.videoWidth,
+                        height: videoElement.videoHeight,
+                    });
 
                     if (context) {
                         // Draw the current video frame to the canvas
@@ -139,9 +143,7 @@ export function recordVideo(
                         );
                         return;
                     }
-
-                    videoElement.srcObject = mediaStream;
-                    videoElement.muted = true; // To mute the video element
+                    setAttribute(videoElement, { srcObject: mediaStream, muted: true });
 
                     const mediaRecorder = new MediaRecorder(mediaStream, {
                         mimeType: `video/${fileType}`,

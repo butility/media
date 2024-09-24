@@ -1,3 +1,6 @@
+
+import { canvas as Canvas} from '@butility/dom/html';
+import { setAttribute } from '@butility/dom/attribute';
 import type { Coordinates, Axis } from '@/types/media';
 
 export function resizeImage(
@@ -9,7 +12,8 @@ export function resizeImage(
         const img = new Image();
 
         img.onload = () => {
-            const canvas = document.createElement('canvas');
+            const canvas = Canvas()
+            // const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
             let width = img.width;
@@ -24,18 +28,14 @@ export function resizeImage(
                 width *= maxHeight / height;
                 height = maxHeight;
             }
-
-            canvas.width = width;
-            canvas.height = height;
-
+            setAttribute(canvas, { width: width, height: height });
             if (ctx) ctx.drawImage(img, 0, 0, width, height);
 
             canvas.toBlob((blob) => resolve(blob), file.type);
         };
 
         img.onerror = () => reject(new Error('Failed to load image'));
-
-        img.src = URL.createObjectURL(file);
+        setAttribute(img, { src: URL.createObjectURL(file) });
     });
 }
 
@@ -44,29 +44,30 @@ export function rotateImage(file: File, degrees: number): Promise<Blob | null> {
         const img = new Image();
 
         img.onload = () => {
-            const canvas = document.createElement('canvas');
+            const canvas = Canvas();
             const ctx = canvas.getContext('2d');
 
-            canvas.width = img.height;
-            canvas.height = img.width;
+            let width = img.width;
+            let height = img.height;
+
+            setAttribute(canvas, { width: height, height: width });
 
             if (ctx) {
                 ctx.translate(canvas.width / 2, canvas.height / 2);
                 ctx.rotate(degrees * (Math.PI / 180));
                 ctx.drawImage(
                     img,
-                    -img.width / 2,
-                    -img.height / 2,
-                    img.width,
-                    img.height,
+                    -width / 2,
+                    -height / 2,
+                    width,
+                    height,
                 );
             }
             canvas.toBlob((blob) => resolve(blob), file.type);
         };
 
         img.onerror = () => reject(new Error('Failed to load image'));
-
-        img.src = URL.createObjectURL(file);
+        setAttribute(img, { src: URL.createObjectURL(file) });
     });
 }
 
@@ -75,20 +76,20 @@ export function compressImage(file: File, quality: any): Promise<Blob | null> {
         const img = new Image();
 
         img.onload = () => {
-            const canvas = document.createElement('canvas');
+            const canvas = Canvas();
             const ctx = canvas.getContext('2d');
 
-            canvas.width = img.width;
-            canvas.height = img.height;
+            let width = img.width;
+            let height = img.height;
+            setAttribute(canvas, { width: width, height: height })
 
-            if (ctx) ctx.drawImage(img, 0, 0, img.width, img.height);
+            if (ctx) ctx.drawImage(img, 0, 0, width, height);
 
             canvas.toBlob((blob) => resolve(blob), file.type, quality);
         };
 
         img.onerror = () => reject(new Error('Failed to load image'));
-
-        img.src = URL.createObjectURL(file);
+        setAttribute(img, { src: URL.createObjectURL(file) });
     });
 }
 
@@ -100,11 +101,13 @@ export function cropImage(
         const img = new Image();
 
         img.onload = () => {
-            const canvas = document.createElement('canvas');
+            const canvas = Canvas();
             const ctx = canvas.getContext('2d');
 
-            canvas.width = coordinates.width;
-            canvas.height = coordinates.height;
+            setAttribute(canvas, {
+                width: coordinates.width,
+                height: coordinates.height
+            });
 
             if (ctx)
                 ctx.drawImage(
@@ -120,7 +123,7 @@ export function cropImage(
 
         img.onerror = () => reject(new Error('Failed to load image'));
 
-        img.src = URL.createObjectURL(file);
+        setAttribute(img, { src: URL.createObjectURL(file) });
     });
 }
 
@@ -129,18 +132,20 @@ export function flipImage(file: File, axis: Axis): Promise<Blob | null> {
         const img = new Image();
 
         img.onload = () => {
-            const canvas = document.createElement('canvas');
+            const canvas = Canvas();
             const ctx = canvas.getContext('2d');
 
-            canvas.width = img.width;
-            canvas.height = img.height;
+            let width = img.width;
+            let height = img.height;
+            
+            setAttribute(canvas, { width: width, height: height });
 
             if (axis === 'horizontal' && ctx) {
                 ctx.scale(-1, 1);
-                ctx.drawImage(img, -img.width, 0, img.width, img.height);
+                ctx.drawImage(img, -width, 0, width, height);
             } else if (axis === 'vertical' && ctx) {
                 ctx.scale(1, -1);
-                ctx.drawImage(img, 0, -img.height, img.width, img.height);
+                ctx.drawImage(img, 0, -height, width, height);
             } else {
                 reject(
                     new Error('Invalid axis. Use "horizontal" or "vertical".'),
@@ -153,7 +158,7 @@ export function flipImage(file: File, axis: Axis): Promise<Blob | null> {
 
         img.onerror = () => reject(new Error('Failed to load image'));
 
-        img.src = URL.createObjectURL(file);
+        setAttribute(img, { src: URL.createObjectURL(file) });
     });
 }
 
@@ -201,8 +206,7 @@ export function preloadImagesWithCallback(
             console.error(`Failed to load image: ${url}`);
             imageLoaded();
         };
-
-        img.src = url;
+        setAttribute(img, { src: url })
     });
 }
 

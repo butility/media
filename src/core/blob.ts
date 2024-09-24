@@ -1,3 +1,5 @@
+
+import { a, body } from '@butility/dom/html';
 import type { VerifyBlobOptions } from '@/types/media';
 
 export function convertBase64ToBlob(
@@ -57,10 +59,8 @@ export function downloadBlob(
 ): void {
     const contentType = blob.type || fallbackContentType;
     const url = URL.createObjectURL(new Blob([blob], { type: contentType }));
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename;
-    document.body.appendChild(link);
+    const link = a({ href: url, download: filename })
+    body(link)
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
