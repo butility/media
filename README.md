@@ -22,25 +22,25 @@ npm install @butility/media
 ```html
 <!-- To use all the functions and methods -->
 <script src="https://unpkg.com/@butility/media@latest/media.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/media.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/media.js" type="module"></script>
 <!-- To use Image utils -->
 <script src="https://unpkg.com/@butility/media@latest/image.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/image.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/image.js" type="module"></script>
 <!-- To use Camera utils -->
 <script src="https://unpkg.com/@butility/media@latest/camera.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/camera.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/camera.js" type="module"></script>
 <!-- To use Audio and Video utils -->
 <script src="https://unpkg.com/@butility/media@latest/audiovisual.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/audiovisual.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/audiovisual.js" type="module"></script>
 <!-- To use File utils -->
 <script src="https://unpkg.com/@butility/media@latest/file.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/file.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/file.js" type="module"></script>
 <!-- To use Blob utils -->
 <script src="https://unpkg.com/@butility/media@latest/blob.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/blob.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/blob.js" type="module"></script>
 <!-- To use Full screen utils -->
 <script src="https://unpkg.com/@butility/media@latest/full-screen.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/full-screen.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/full-screen.js" type="module"></script>
 ```
 ## Examples
 
@@ -98,4 +98,4 @@ You can find [changelog here](https://github.com/butility/media/tree/main/docs/c
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE.md).

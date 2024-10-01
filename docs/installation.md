@@ -23,25 +23,25 @@ You can also include the Media package via a CDN link in your HTML file:
 ```html
 <!-- To use all the functions and methods -->
 <script src="https://unpkg.com/@butility/media@latest/media.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/media.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/media.js" type="module"></script>
 <!-- To use Image utils -->
 <script src="https://unpkg.com/@butility/media@latest/image.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/image.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/image.js" type="module"></script>
 <!-- To use Camera utils -->
 <script src="https://unpkg.com/@butility/media@latest/camera.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/camera.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/camera.js" type="module"></script>
 <!-- To use Audio and Video utils -->
 <script src="https://unpkg.com/@butility/media@latest/audiovisual.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/audiovisual.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/audiovisual.js" type="module"></script>
 <!-- To use File utils -->
 <script src="https://unpkg.com/@butility/media@latest/file.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/file.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/file.js" type="module"></script>
 <!-- To use Blob utils -->
 <script src="https://unpkg.com/@butility/media@latest/blob.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/blob.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/blob.js" type="module"></script>
 <!-- To use Full screen utils -->
 <script src="https://unpkg.com/@butility/media@latest/full-screen.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/full-screen.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@butility/media@latest/full-screen.js" type="module"></script>
 ```
 
 ```js
